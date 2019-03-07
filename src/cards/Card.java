@@ -2,7 +2,7 @@ package cards;
 
 /**
  * Card Object
- * @author acknapp
+ * @author Laurent from acknapp's project: https://github.com/acknapp/BlackJack
  */
 public class Card {
     private int value;
@@ -11,7 +11,7 @@ public class Card {
     private boolean Ace;
 
     /**
-     * Card Constructor
+     * Card Constructor.
      * @param name of card
      * @param suite of card
      */
@@ -23,14 +23,14 @@ public class Card {
     }
 
     /**
-     * Prints the name of the card
+     * Prints the name of the card.
      */
     public void printCard(){
         System.out.println(this.name + " of " + this.suite);
     }
 
     /**
-     * Gives the value of the card
+     * Gives the value of the card.
      * @return value
      */
     public int giveValue(){
@@ -38,7 +38,7 @@ public class Card {
     }
 
     /**
-     * Check if this card is an Ace
+     * Checks if this card is an Ace.
      * @return Ace
      */
     public boolean isAce(){
@@ -46,7 +46,7 @@ public class Card {
     }
 
     /**
-     * Given the name of a card, determines the value of that card
+     * Given the name of a card, determines the value of that card.
      * @param name the given card
      * @return value of the card
      */
