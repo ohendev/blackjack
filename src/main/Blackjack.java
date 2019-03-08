@@ -70,7 +70,7 @@ public class Blackjack {
                 if (!another_card) {
                     break;
                 } else {
-                    playerTotal += game.drawCard(newDeck, dealersCards);
+                    playerTotal += game.drawCard(newDeck, playersCards);
                 }
 
                 for(int i = 0; i < playersCards.size(); i++){
@@ -105,14 +105,14 @@ public class Blackjack {
     }
 
     /**
-     * Getter to use the array in another class.
+     * Getter to use the suites array in another class.
      */
     public static String[] getSuites() {
         return suites;
     }
 
     /**
-     * Getter to use the array in another class.
+     * Getter to use the names array in another class.
      */
     public static String[] getNames() {
         return names;
