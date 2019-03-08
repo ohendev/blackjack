@@ -1,7 +1,6 @@
 package game;
 
 import cards.Card;
-import sun.util.resources.cldr.to.CalendarData_to_TO;
 
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +26,7 @@ public class Game {
      * Checks to see if the player or the dealer won.
      * @param total running total of player's cards
      * @param dealer running total of dealer's cards
-     * @param to_play
+     * @param to_play the amount that you bet this round
      * @return the money amount that the player has
      */
     public int winCheck(int total, int dealer, int to_play) {
@@ -87,7 +86,7 @@ public class Game {
                     System.out.println("You bet $" + bet);
                 }
             } catch (NumberFormatException e) {
-                continue loop;
+                System.out.println("You entered letters where you need to enter a number.");
             }
         }
         return bet;
@@ -132,6 +131,9 @@ public class Game {
         while(answer.equals("") || answer.matches("\\d+")) {
             System.out.println("Do you want to play again?");
             answer = console.next();
+            if(answer.matches("\\d+")) {
+                System.out.println("You must reply with letters.");
+            }
         }
         if (answer.indexOf("y") == 0 || answer.indexOf("Y") == 0) {
             return true;
