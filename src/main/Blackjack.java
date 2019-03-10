@@ -11,16 +11,14 @@ import static helper.DeckBuilder.buildDeck;
 import static helper.DeckBuilder.shuffleDeck;
 
 /**
- * Simple BlackJack game for fun.
+ * Simple BlackJack GAME for fun.
  * @author Popysid from Andrew Knapp's project: https://github.com/acknapp/BlackJack
  * @version 3.1 - Separating Card class from Blackjack class, creating DeckBuilder and Game classes to separate the logic from the main.
  */
 public class Blackjack {
 
-    private  static final Game game = new Game();
+    private static final Game GAME = new Game();
     private static final int INITIAL_MONEY = 100;
-    private static final String[] suites = {"Hearts", "Spades", "Clubs", "Diamonds"};
-    private static final String[] names = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
     public static void main(String[] arg)	{
         Scanner console = new Scanner(System.in);
@@ -31,9 +29,9 @@ public class Blackjack {
 
         //setup the money of the player
         int money =	INITIAL_MONEY;
-        game.intro(money);
+        GAME.intro(money);
 
-        // start the game
+        // start the GAME
         boolean play = true;
         while (money > 0 && play) {
 
@@ -49,28 +47,28 @@ public class Blackjack {
             newDeck = shuffleDeck(newDeck);
 
             //Asks the player how much he wants to bet
-            int roundBet = game.betAmount(money, console);
+            int roundBet = GAME.betAmount(money, console);
 
             //Initial Deal
             System.out.print("First card: ");
-            playerTotal += game.drawCard(newDeck, playersCards);
+            playerTotal += GAME.drawCard(newDeck, playersCards);
 
             System.out.print("Second card: ");
-            playerTotal += game.drawCard(newDeck, playersCards);
+            playerTotal += GAME.drawCard(newDeck, playersCards);
             System.out.println();
 
             System.out.println("Dealer showing: ");
-            dealerTotal += game.drawCard(newDeck, dealersCards);
+            dealerTotal += GAME.drawCard(newDeck, dealersCards);
             System.out.println("Dealer has: " + dealerTotal);
 
             //Player plays portion
             boolean another_card = true;
             while (playerTotal < 21){
-                another_card = game.hit(playerTotal, console);
+                another_card = GAME.hit(playerTotal, console);
                 if (!another_card) {
                     break;
                 } else {
-                    playerTotal += game.drawCard(newDeck, playersCards);
+                    playerTotal += GAME.drawCard(newDeck, playersCards);
                 }
 
                 for(int i = 0; i < playersCards.size(); i++){
@@ -99,22 +97,8 @@ public class Blackjack {
 
             //Decides who wins and whether to play another round
             System.out.println();
-            money += game.winCheck(playerTotal, dealerTotal, roundBet);
-            play = game.playAgain(console, money);
+            money += GAME.winCheck(playerTotal, dealerTotal, roundBet);
+            play = GAME.playAgain(console, money);
         }
-    }
-
-    /**
-     * Getter to use the suites array in another class.
-     */
-    public static String[] getSuites() {
-        return suites;
-    }
-
-    /**
-     * Getter to use the names array in another class.
-     */
-    public static String[] getNames() {
-        return names;
     }
 }
