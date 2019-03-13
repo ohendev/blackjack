@@ -12,7 +12,7 @@ import static helper.DeckBuilder.shuffleDeck;
 
 /**
  * Simple BlackJack GAME for fun.
- * @author Popysid from Andrew Knapp's project: https://github.com/acknapp/BlackJack
+ * @author Popysid based on Andrew Knapp's project: https://github.com/acknapp/BlackJack
  * @version 3.1 - Separating Card class from Blackjack class, creating DeckBuilder and Game classes to separate the logic from the main.
  */
 public class Blackjack {

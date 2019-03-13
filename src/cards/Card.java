@@ -2,7 +2,7 @@ package cards;
 
 /**
  * Card Object
- * @author Laurent from acknapp's project: https://github.com/acknapp/BlackJack
+ * @author Laurent based on acknapp's project: https://github.com/acknapp/BlackJack
  */
 public class Card {
     private int value;
