@@ -54,7 +54,7 @@ public class Card {
         int value;
         try{
             value = Integer.parseInt(name.substring(0,1));
-            return value > 2? value : 10;
+            return value > 1? value : 10;
         } catch (NumberFormatException e){
             if (name.charAt(0) == 'K' || name.charAt(0) == 'Q' || name.charAt(0) == 'J'){
                 value = 10;
