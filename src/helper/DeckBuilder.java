@@ -3,8 +3,8 @@ package helper;
 import cards.Card;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class DeckBuilder {
 
@@ -32,14 +32,8 @@ public class DeckBuilder {
      * @return a new shuffled deck
      */
     public static List<Card> shuffleDeck(List<Card> deck){
-        List<Card> shuffledDeck = new ArrayList<>();
-        int r = 0;
-        while (deck.size() > 0){
-            Random card = new Random();
-            r = card.nextInt(deck.size());
-            Card temp = deck.remove(r);
-            shuffledDeck.add(temp);
-        }
+        List<Card> shuffledDeck = new ArrayList<>(deck);
+        Collections.shuffle(shuffledDeck);
         return shuffledDeck;
     }
 }
