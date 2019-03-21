@@ -5,10 +5,10 @@ package cards;
  * @author Laurent based on acknapp's project: https://github.com/acknapp/BlackJack
  */
 public class Card {
+    private String suite;
+    private String name;
     private int value;
-    public String name;
-    public String suite;
-    private boolean Ace;
+    private boolean ace;
 
     /**
      * Card Constructor.
@@ -19,7 +19,7 @@ public class Card {
         this.name = name;
         this.suite = suite;
         this.value = determineCardValue(name);
-        this.Ace = this.name.equals("Ace");
+        this.ace = this.name.equals("ace");
     }
 
     /**
@@ -38,11 +38,11 @@ public class Card {
     }
 
     /**
-     * Checks if this card is an Ace.
-     * @return Ace
+     * Checks if this card is an ace.
+     * @return ace
      */
     public boolean isAce(){
-        return Ace;
+        return ace;
     }
 
     /**
