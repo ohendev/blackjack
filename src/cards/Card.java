@@ -19,7 +19,7 @@ public class Card {
         this.name = name;
         this.suite = suite;
         this.value = determineCardValue(name);
-        this.ace = this.name.equals("ace");
+        this.ace = this.name.equalsIgnoreCase("ace");
     }
 
     /**
